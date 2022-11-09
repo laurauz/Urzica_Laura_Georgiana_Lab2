@@ -11,10 +11,14 @@ namespace Urzica_Laura_Georgiana_Lab2.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
-        public override string ToString()
+        [Display(Name = "Full Name")]
+        public string FullName
         {
-            return FirstName + " " + LastName;
+            get
+            {
+                return FirstName + " " + LastName;
+            }
         }
-
+        public ICollection<Book>? Books { get; set; }
     }
 }
