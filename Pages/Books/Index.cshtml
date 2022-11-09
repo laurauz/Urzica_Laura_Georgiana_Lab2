@@ -2,7 +2,7 @@
 @model Urzica_Laura_Georgiana_Lab2.Pages.Books.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Books";
 }
 
 <h1>Index</h1>
@@ -30,7 +30,7 @@
                     @Html.DisplayNameFor(model => model.Book[0].Title)
                 </a>
             </th>
-            <th colspan="2">
+            <th>
                 <a asp-page="./Index" asp-route-sortOrder="@Model.AuthorSort">
                     @Html.DisplayNameFor(model => model.Book[0].Author.FullName)
                 </a>
@@ -49,7 +49,8 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.BookD.Books){
+        @foreach (var item in Model.BookD.Books)
+        {
           string selectedRow = "";
                   if (item.ID == Model.BookID)
                 {

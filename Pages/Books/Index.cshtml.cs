@@ -27,6 +27,7 @@ namespace Urzica_Laura_Georgiana_Lab2.Pages.Books
         public string TitleSort { get; set; }
         public string AuthorSort { get; set; }
         public string CurrentFilter { get; set; }
+
         public async Task OnGetAsync(int? id, int? categoryID, string sortOrder, string
 searchString)
         {
@@ -38,6 +39,7 @@ searchString)
 
             BookD.Books = await _context.Book
                 .Include(b => b.Publisher)
+                .Include(b => b.Author)
                 .Include(b => b.BookCategories)
                 .ThenInclude(b => b.Category)
                 .AsNoTracking()
@@ -49,6 +51,7 @@ searchString)
                 BookD.Books = BookD.Books.Where(s => s.Author.FirstName.Contains(searchString)
                 || s.Author.LastName.Contains(searchString)
                 || s.Title.Contains(searchString));
+            }
 
                 if (id != null)
                 {
@@ -71,4 +74,4 @@ searchString)
             }
         }
     }
-}
+
