@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Urzica_Laura_Georgiana_Lab2.Data;
 
@@ -11,9 +12,10 @@ using Urzica_Laura_Georgiana_Lab2.Data;
 namespace Urzica_Laura_Georgiana_Lab2.Migrations
 {
     [DbContext(typeof(Urzica_Laura_Georgiana_Lab2Context))]
-    partial class Urzica_Laura_Georgiana_Lab2ContextModelSnapshot : ModelSnapshot
+    [Migration("20221113121954_PublisherIndexDataCreate")]
+    partial class PublisherIndexDataCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
