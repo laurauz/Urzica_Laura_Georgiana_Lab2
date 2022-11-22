@@ -10,6 +10,8 @@ namespace Urzica_Laura_Georgiana_Lab2.Models
     {
         public int ID { get; set; }
         [Display(Name = "Book Title")]
+
+        [RegularExpression(@"^[A-Z]+[a-zA-Z\s-]*$", ErrorMessage = "Titlul trebuie sa inceapa cu majuscula (ex. Ana sau Ana Maria sau AnaMaria"), Required, StringLength(150, MinimumLength = 3)]
         public string Title { get; set; }
 
 
